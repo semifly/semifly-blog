@@ -12,10 +12,12 @@ async function processFile(file) {
     const content = fs.readFileSync(file, "utf8");
     const { data, content: body } = matter(content);
 
-    const isTracked = await git.raw(["ls-files", "--error-unmatch", file]).then(
-      () => true,
-      () => false,
-    );
+    const isTracked = await git
+      .raw(["ls-files", "--error-unmatch", file])
+      .then(
+        () => true,
+        () => false,
+      );
 
     if (!isTracked && !data.updatedOn) {
       console.log(` First-time file: ${file} -> skip updatedOn`);
