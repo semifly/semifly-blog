@@ -2,7 +2,7 @@ type PlainObject = Record<string, any>;
 
 export const transformObject = (
   obj: PlainObject,
-  callback: (key: string, value: any) => [string, any]
+  callback: (key: string, value: any) => [string, any],
 ) => {
   if (typeof obj !== "object") {
     return obj;

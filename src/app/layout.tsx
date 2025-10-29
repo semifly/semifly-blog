@@ -1,5 +1,6 @@
+import * as React from "react";
+
 import HtmlRoot from "@/app/HtmlRoot";
-import React from "react";
 
 import "./layout.linaria.global";
 

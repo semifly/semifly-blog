@@ -33,7 +33,9 @@ function createStyleObject(colors: ColorMapRaw): ColorMap {
 
     const newKey = `--${kebab(key)}`;
     const newValue =
-      a === 1 ? `hsl(${h}deg ${s}% ${l}%)` : `hsl(${h}deg ${s}% ${l}% / ${a})`;
+      a === 1
+        ? `hsl(${h}deg ${s}% ${l}%)`
+        : `hsl(${h}deg ${s}% ${l}% / ${a})`;
 
     return [newKey, newValue];
   });

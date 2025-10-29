@@ -10,3 +10,5 @@ export {
 } from "./colors";
 
 export type ColorMode = "light" | "dark";
+
+export const MENU_WITH = 80;

@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "lint-staged": {
+    "*.mdx": "node scripts/update-mdx.js"
+  },
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
+    "prepare": "husky install",
+    "format": "prettier . --write"
   },
   "dependencies": {
     "@linaria/core": "^6.3.0",
@@ -21,12 +24,18 @@
     "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/lodash.kebabcase": "^4.1.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "dayjs": "^1.11.18",
+    "gray-matter": "^4.0.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "3.6.2",
+    "simple-git": "^3.28.0",
     "typescript": "^5"
   }
 }

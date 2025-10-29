@@ -1,5 +1,6 @@
-import HomepageSiteHeader from "@/app/(home)/HomepageSiteHeader";
 import { styled } from "@linaria/react";
+
+import HomepageSiteHeader from "./HomepageSiteHeader";
 
 function Page() {
   return (

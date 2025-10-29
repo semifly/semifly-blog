@@ -1,4 +1,4 @@
-export type { ColorMap, ColorTuple, ColorMode } from "./constants";
+export type { ColorMap, ColorMode, ColorTuple } from "./constants";
 
 export {
   DARK_COLORS,
@@ -7,4 +7,5 @@ export {
   LIGHT_COLORS,
   LIGHT_COLORS_CSS,
   LIGHT_COLORS_RAW,
+  MENU_WITH,
 } from "./constants";
