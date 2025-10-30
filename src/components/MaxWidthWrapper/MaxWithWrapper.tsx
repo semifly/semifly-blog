@@ -4,7 +4,7 @@ import React from "react";
 
 import { styled } from "@linaria/react";
 
-import { MENU_WITH } from "@/constants";
+import { MENU_WIDTH } from "@/constants";
 
 interface Props {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ function MaxWithWrapper({ children }: Props) {
 }
 
 const OutWrapper = styled.div`
-  width: ${MENU_WITH}rem;
+  width: ${MENU_WIDTH}rem;
   max-width: 100%;
   margin: auto;
 `;

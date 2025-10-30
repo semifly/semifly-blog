@@ -2,41 +2,33 @@
 import dayjs from "dayjs";
 import fs from "fs";
 import matter from "gray-matter";
-import simpleGit from "simple-git";
+import path from "path";
 
-const git = simpleGit();
 const files = process.argv.slice(2);
 
-async function processFile(file) {
-  try {
-    const content = fs.readFileSync(file, "utf8");
-    const { data, content: body } = matter(content);
+files.forEach((file) => {
+  const fullPath = path.resolve(file);
 
-    const isTracked = await git
-      .raw(["ls-files", "--error-unmatch", file])
-      .then(
-        () => true,
-        () => false,
-      );
+  const raw = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(raw);
 
-    if (!isTracked && !data.updatedOn) {
-      console.log(` First-time file: ${file} -> skip updatedOn`);
-      return;
+  const stats = fs.statSync(fullPath);
+  const fileTime = dayjs(stats.mtime).format("YYYY-MM-DD HH:mm:ss");
+
+  if (data.isPublished) {
+    if (!data.publishedOn) {
+      data.publishedOn = fileTime;
+      console.log(`Added "PublishedOn" in ${file}: ${fileTime}`);
     }
 
-    const now = dayjs().format("YYYY-MM-DD HH:mm:ss");
-    data.updatedOn = now;
-    const newContent = matter.stringify(body, data);
-    fs.writeFileSync(file, newContent, "utf8");
-
-    console.log(`updated "UpdatedOn" in ${file} -> ${now}`);
-  } catch (err) {
-    console.error(`Failed to update ${file}:`, err);
+    const prevUpdatedOn = data.updatedOn ? dayjs(data.updatedOn) : null;
+    if (
+      !prevUpdatedOn ||
+      prevUpdatedOn.format("YYYY-MM-DD HH:mm:ss") !== fileTime
+    ) {
+    }
+  } else {
+    if (data.publishedOn || data.updatedOn) {
+    }
   }
-}
-
-(async () => {
-  for (const file of files) {
-    await processFile(file);
-  }
-})();
+});

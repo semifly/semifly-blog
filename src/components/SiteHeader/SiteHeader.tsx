@@ -1,17 +1,20 @@
 "use client";
 
+import Link from "@/components/Link/Link";
 import { styled } from "@linaria/react";
 
 function SiteHeader() {
   return (
-    <OutHeader>
-      <Header>1</Header>
-    </OutHeader>
+    <OutWrapper>
+      <Link href="/">semi fly</Link>
+    </OutWrapper>
   );
 }
 
-const OutHeader = styled.div``;
-
-const Header = styled.header``;
+const OutWrapper = styled.header`
+  display: flex;
+  height: 5rem;
+  line-height: 5rem;
+`;
 
 export default SiteHeader;

@@ -11,4 +11,4 @@ export {
 
 export type ColorMode = "light" | "dark";
 
-export const MENU_WITH = 80;
+export const MENU_WIDTH = 80;

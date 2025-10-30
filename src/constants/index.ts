@@ -7,5 +7,5 @@ export {
   LIGHT_COLORS,
   LIGHT_COLORS_CSS,
   LIGHT_COLORS_RAW,
-  MENU_WITH,
+  MENU_WIDTH,
 } from "./constants";
