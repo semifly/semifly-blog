@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "@/components/Link/Link";
 import { styled } from "@linaria/react";
+
+import Link from "@/components/Link/Link";
 
 function SiteHeader() {
   return (

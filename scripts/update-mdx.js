@@ -21,7 +21,9 @@ files.forEach((file) => {
       console.log(`Added "PublishedOn" in ${file}: ${fileTime}`);
     }
 
-    const prevUpdatedOn = data.updatedOn ? dayjs(data.updatedOn) : null;
+    const prevUpdatedOn = data.updatedOn
+      ? dayjs(data.updatedOn)
+      : null;
     if (
       !prevUpdatedOn ||
       prevUpdatedOn.format("YYYY-MM-DD HH:mm:ss") !== fileTime
