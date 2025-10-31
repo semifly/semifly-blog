@@ -1,6 +1,6 @@
 "use client";
 
-import { styled } from "@linaria/react";
+import { styled } from "@pigment-css/react";
 
 import MaxWithWrapper from "@/components/MaxWidthWrapper";
 import SiteHeader from "@/components/SiteHeader";

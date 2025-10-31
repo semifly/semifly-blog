@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { styled } from "@linaria/react";
+import { styled } from "@pigment-css/react";
 
 interface Props {
   href: string;
