@@ -4,7 +4,7 @@ import React from "react";
 
 import { styled } from "@pigment-css/react";
 
-import { MENU_WIDTH } from "@/constants";
+import { HEADER_WIDTH } from "@/constants";
 
 interface Props {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ function MaxWithWrapper({ children }: Props) {
 }
 
 const OutWrapper = styled.div`
-  width: ${MENU_WIDTH}rem;
+  width: ${HEADER_WIDTH}rem;
   max-width: 100%;
   margin: auto;
 `;

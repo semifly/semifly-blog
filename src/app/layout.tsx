@@ -1,8 +1,9 @@
 import * as React from "react";
 
 import HtmlRoot from "@/app/HtmlRoot";
+import UserPreferencesProvider from "@/UserPerencesProvider/UserPerencesProvider";
 
-import "./layout.linaria.global";
+import "./layout.style";
 
 interface Props {
   children: React.ReactNode;
@@ -10,9 +11,11 @@ interface Props {
 
 function Layout({ children }: Props) {
   return (
-    <HtmlRoot>
-      <body>{children}</body>
-    </HtmlRoot>
+    <UserPreferencesProvider>
+      <HtmlRoot>
+        <body>{children}</body>
+      </HtmlRoot>
+    </UserPreferencesProvider>
   );
 }
 

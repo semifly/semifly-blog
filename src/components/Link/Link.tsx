@@ -3,23 +3,26 @@
 import React from "react";
 
 import { styled } from "@pigment-css/react";
+import NextLink from "next/link";
 
-interface Props {
-  href: string;
-  children: React.ReactNode;
+interface Props extends React.HTMLProps<HTMLAnchorElement> {
+  href?: string;
 }
 
-function Link({ href, children, ...delegated }: Props) {
+const Link = (
+  { href = "", children, ...delegated }: Props,
+  ref: React.ForwardedRef<HTMLAnchorElement>,
+) => {
   return (
-    <StyleLink href={href} {...delegated}>
+    <StyleLink ref={ref} href={href} {...delegated}>
       {children}
     </StyleLink>
   );
-}
+};
 
-const StyleLink = styled.a`
+const StyleLink = styled(NextLink)`
   color: var(--color-text);
   text-decoration: none;
 `;
 
-export default Link;
+export default React.forwardRef<HTMLAnchorElement, Props>(Link);

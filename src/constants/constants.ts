@@ -11,4 +11,8 @@ export {
 
 export type ColorMode = "light" | "dark";
 
-export const MENU_WIDTH = 80;
+export const COLOR_THEME_COOKIE_NAME = "reboert-color-theme";
+export const DEFAULT_COLOR_MODE: ColorMode = "light";
+
+export const HEADER_WIDTH = 1280 / 16;
+export const HEADER_HEIGHT = 80 / 16;

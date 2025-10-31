@@ -11,6 +11,9 @@ importers:
       '@pigment-css/react':
         specifier: ^0.0.30
         version: 0.0.30(@types/react@19.2.2)(react@19.0.0)(typescript@5.9.3)
+      js-cookie:
+        specifier: ^3.0.5
+        version: 3.0.5
       lodash.kebabcase:
         specifier: ^4.1.1
         version: 4.1.1
@@ -30,6 +33,9 @@ importers:
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.2
         version: 5.2.2(prettier@3.6.2)
+      '@types/js-cookie':
+        specifier: ^3.0.6
+        version: 3.0.6
       '@types/lodash.kebabcase':
         specifier: ^4.1.9
         version: 4.1.9
@@ -519,6 +525,9 @@ packages:
       svelte:
         optional: true
 
+  '@types/js-cookie@3.0.6':
+    resolution: {integrity: sha512-wkw9yd1kEXOPnvEeEV1Go1MmxtBJL0RR79aOTAApecWFVu7w0NNXNqhcWgvw2YgZDYadliXkl14pa3WXw5jlCQ==}
+
   '@types/lodash.kebabcase@4.1.9':
     resolution: {integrity: sha512-kPrrmcVOhSsjAVRovN0lRfrbuidfg0wYsrQa5IYuoQO1fpHHGSme66oyiYA/5eQPVl8Z95OA3HG0+d2SvYC85w==}
 
@@ -809,6 +818,10 @@ packages:
 
   javascript-natural-sort@0.7.1:
     resolution: {integrity: sha512-nO6jcEfZWQXDhOiBtG2KvKyEptz7RVbpGP4vTD2hLBdmNQSsCiicO2Ioinv6UI4y9ukqnBpy+XZ9H6uLNgJTlw==}
+
+  js-cookie@3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -1645,6 +1658,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@types/js-cookie@3.0.6': {}
+
   '@types/lodash.kebabcase@4.1.9':
     dependencies:
       '@types/lodash': 4.17.20
@@ -1910,6 +1925,8 @@ snapshots:
   isobject@3.0.1: {}
 
   javascript-natural-sort@0.7.1: {}
+
+  js-cookie@3.0.5: {}
 
   js-tokens@4.0.0: {}
 
